@@ -34,9 +34,6 @@ void main(int argc, char *argv[]){
         printf("Do you want to overide %s? (y/n) > ", argv[2]);
         scanf("%c", &override);
         file2Desc = open(argv[2], O_RDWR);
-    }else{
-        newfile = fopen(argv[2], "w");
-        file2Desc = open(argv[2], O_RDWR);
     }
     
     
@@ -45,7 +42,7 @@ void main(int argc, char *argv[]){
 
 
 
-    read(file1Desc, file1Buf, nbyts);
+    read(file1Desc, file1Buf, 20);
 
 
     if(override == 'y'){
